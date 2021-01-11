@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_213900) do
-
-  create_table "pokemons", force: :cascade do |t|
-    t.string "species"
-    t.string "nickname"
-    t.integer "trainer_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["trainer_id"], name: "index_pokemons_on_trainer_id"
+ActiveRecord::Schema.define(version: 20_210_106_213_900) do
+  create_table 'pokemons', force: :cascade do |t|
+    t.string 'species'
+    t.string 'nickname'
+    t.integer 'trainer_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['trainer_id'], name: 'index_pokemons_on_trainer_id'
   end
 
-  create_table "trainers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'trainers', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "pokemons", "trainers"
+  add_foreign_key 'pokemons', 'trainers'
 end
